@@ -1,0 +1,31 @@
+{
+  "name": "vefi-exchange-streams-and-sockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write **/**/*.{java,js,json,xml}",
+    "producer:package": "mvn clean package -DskipTests -f ./producer/pom.xml",
+    "producer:run:background": "nohup java -jar producer/target/vefi-exchange-streams-producer-0.0.1-SNAPSHOT.jar &",
+    "producer:run": "java -jar producer/target/vefi-exchange-streams-producer-0.0.1-SNAPSHOT.jar",
+    "consumer:run": "node consumer/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeFi-Network/vefi-exchange-streams-and-sockets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeFi-Network/vefi-exchange-streams-and-sockets/issues"
+  },
+  "homepage": "https://github.com/VeFi-Network/vefi-exchange-streams-and-sockets#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "kafkajs": "^1.16.0",
+    "redis": "^4.0.6",
+    "socket.io": "^4.4.1"
+  }
+}
